@@ -135,7 +135,7 @@ def object_align(video_ip):
             cv2.putText(img, "Angle is " + str(Angle),
                         org=(50, 80), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=0.5, thickness=2, color=(0, 255, 255))
 
-            if(Angle < args['angle'] and deviation < args['deviation']):
+            if(Angle < int(args['angle']) and deviation < int(args['deviation'])):
                 # cv2.imshow('contours', img)
 
                 latest_img = frame.copy()
