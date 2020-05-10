@@ -13,7 +13,7 @@ Python script to measure deviation from window center to object center and angle
 OpenCV4\
 Python3\
 Numpy\
-Scipy\
+Scipy
 
 # Usage
 1. Measure angle and deviation of image from center : 
