@@ -4,6 +4,16 @@ import numpy as np
 import math
 import time
 from scipy.spatial import distance as dist
+import argparse
+
+ap = argparse.ArgumentParser()
+ap.add_argument('--angle', default=10, help='Enter allowed angle deviaiton')
+ap.add_argument('--deviation', default=35,
+                help='Enter allowed deviaiton from center')
+ap.add_argument('--video', default=0,
+                help='Enter video path')
+args = vars(ap.parse_args())
+print(args)
 
 
 def obj_midpoint(pt1, pt2):
@@ -125,7 +135,7 @@ def object_align(video_ip):
             cv2.putText(img, "Angle is " + str(Angle),
                         org=(50, 80), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=0.5, thickness=2, color=(0, 255, 255))
 
-            if(Angle < 8.98 and deviation < 33):
+            if(Angle < args['angle'] and deviation < args['deviation']):
                 # cv2.imshow('contours', img)
 
                 latest_img = frame.copy()
@@ -171,7 +181,7 @@ def object_align(video_ip):
 
 
 if __name__ == "__main__":
-    aligned_object = object_align('VID-20200422-WA0020.mp4')
+    aligned_object = object_align(args['video'])
     if(aligned_object is None):
         print("Object not aligned properly, returned None \nPress esc to exit")
     else:

@@ -2,13 +2,19 @@ import cv2
 import numpy as np
 from scipy.spatial import distance as dist
 import math
+import argparse
+
+ap = argparse.ArgumentParser()
+ap.add_argument('--image', help='Enter image path', required=True)
+args = vars(ap.parse_args())
+print(args)
 
 
 def midpoint(pt1, pt2):
     return ((pt1 + pt2) // 2)
 
 
-img = cv2.pyrDown(cv2.imread('images/15.jpg', cv2.IMREAD_UNCHANGED))
+img = cv2.pyrDown(cv2.imread(args['image'], cv2.IMREAD_UNCHANGED))
 
 md_pt_y = midpoint(0, img.shape[0])
 md_pt_x = midpoint(0, img.shape[1])
