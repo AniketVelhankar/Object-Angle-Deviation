@@ -3,6 +3,11 @@ Python script to measure deviation from window center to object center and angle
 
 # Outputs
 ![](/Outputs/output.png)
+![](/Outputs/output2.png)
+![](/Outputs/output3.png)
+![](/Outputs/output4.png)
+![](/Outputs/output5.png)
+![](/Outputs/output6.png)
 
 # Usage
 1. Measure angle and deviation of image from center : 
